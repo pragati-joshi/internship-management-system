@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" styleClass="dashboard-container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.placement.controller.MentorDashboardController">
+    <Label text="Mentor Dashboard" styleClass="dashboard-title" />
+    
+    <Label text="Assigned Students" styleClass="section-title" />
+    
+    <HBox spacing="10">
+        <Button text="Evaluate Selected Student" onAction="#handleEvaluate" styleClass="primary-button" />
+    </HBox>
+
+    <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Student Name" prefWidth="200"/>
+            <TableColumn fx:id="internshipCol" text="Internship Role" prefWidth="250"/>
+            <TableColumn fx:id="statusCol" text="Status" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" styleClass="dashboard-container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.placement.controller.AdminDashboardController">
+    <Label text="Admin Dashboard" styleClass="dashboard-title" />
+    
+    <HBox spacing="20">
+        <VBox styleClass="status-card">
+            <Label text="Total Users" styleClass="card-title"/>
+            <Label fx:id="totalUsersLabel" text="0" styleClass="card-value"/>
+        </VBox>
+        <VBox styleClass="status-card">
+            <Label text="Placement %" styleClass="card-title"/>
+            <Label text="85%" styleClass="card-value"/>
+        </VBox>
+    </HBox>
+
+    <Label text="User Management" styleClass="section-title" />
+    
+    <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="usernameCol" text="Username" prefWidth="250"/>
+            <TableColumn fx:id="roleCol" text="Role" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

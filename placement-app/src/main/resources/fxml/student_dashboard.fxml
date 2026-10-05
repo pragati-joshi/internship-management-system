@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" styleClass="dashboard-container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.placement.controller.StudentDashboardController">
+    <Label text="Student Dashboard" styleClass="dashboard-title" />
+    
+    <HBox spacing="20">
+        <VBox styleClass="status-card">
+            <Label text="Applied" styleClass="card-title"/>
+            <Label text="3" styleClass="card-value"/>
+        </VBox>
+        <VBox styleClass="status-card">
+            <Label text="Interviewing" styleClass="card-title"/>
+            <Label text="1" styleClass="card-value"/>
+        </VBox>
+        <VBox styleClass="status-card">
+            <Label text="Offered" styleClass="card-title"/>
+            <Label text="0" styleClass="card-value"/>
+        </VBox>
+    </HBox>
+
+    <Label text="Available Internships" styleClass="section-title" />
+    <Label fx:id="statusLabel" text="Loading..." />
+    
+    <HBox spacing="10">
+        <Button text="Apply for Selected" onAction="#handleApply" styleClass="primary-button" />
+    </HBox>
+
+    <StackPane VBox.vgrow="ALWAYS">
+        <VBox fx:id="loadingBox" alignment="CENTER">
+            <ProgressIndicator />
+            <Label text="Fetching data from server..." />
+        </VBox>
+        <TableView fx:id="internshipTable" visible="false">
+            <columns>
+                <TableColumn fx:id="companyCol" text="Company" prefWidth="200"/>
+                <TableColumn fx:id="titleCol" text="Role" prefWidth="300"/>
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </StackPane>
+</VBox>
